@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ncpClientId&submodules=geocoder"></script>
+    <title>index</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tn42qh28xh&submodules=geocoder"></script>
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
@@ -29,6 +30,12 @@
 </div>
 </body>
 <script>
+
+//검색
+//https://bcdragonfly.tistory.com/56
+//https://stickode.tistory.com/501
+
+
 //지도를 그려주는 함수 실행
 selectMapList();
 
@@ -87,6 +94,8 @@ function insertAddress(address, latitude, longitude) {
 
 	$('#mapList').append(mapList);	
 
+
+    //오리지널 마커
 	var map = new naver.maps.Map('map', {
 	    center: new naver.maps.LatLng(longitude, latitude),
 	    zoom: 14
@@ -95,6 +104,22 @@ function insertAddress(address, latitude, longitude) {
         map: map,
         position: new naver.maps.LatLng(longitude, latitude),
     });
+
+
+
+//     //잠실
+//     var map = new naver.maps.Map('map', {
+//             center: new naver.maps.LatLng(37.5112, 127.0981), // 잠실 롯데월드를 중심으로 하는 지도
+//             zoom: 15
+//         });
+
+// var marker = new naver.maps.Marker({
+//             position: new naver.maps.LatLng(37.5112, 127.0981),
+//             map: map
+//         });
+
+
+
 }
 
 //지도를 그려주는 함수
@@ -120,6 +145,20 @@ function moveMap(len, lat) {
         map: map
     });
 }
+
+//다중 마커 추가
+
+// Marker marker = new Marker();
+// marker.setPosition(new LatLng(37.5670135, 126.9783740));
+// marker.setMap(naverMap);
+
+// Marker marker2 = new Marker();
+// marker2.setPosition(new LatLng(37.563119, 126.969418));
+// marker2.setMap(naverMap);
+
+
+
+
 </script>
 </html>
  
